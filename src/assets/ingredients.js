@@ -18,6 +18,7 @@ const acc = [
     { "Quinoa": 120 },
     { "Couscous": 112 }
 ]
+console.log(acc[3]['Légumes grillés'])
 const dessert = [
     { "pavlova": 200 },
     { "tiramisu": 300 },
@@ -35,9 +36,7 @@ const week = [
     "Dimanche"
 ]
 
-function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
+
 
 function randomMeatOrAcc(type) {
     const randomIndex = randomInt(0, type.length - 1);
@@ -60,36 +59,12 @@ function getDay() {
     return day;
 }
 
-function getWeek() {
-    const weekDishe = []
-    week.forEach(day => {
-        weekDishe.push({
-            day: day,
-            dishe: getDay()
-        })
-    });
-    return weekDishe;
-}
+
 
 export const weekDishe = getWeek();
 
 console.log(weekDishe);
 
 
-
-
-
-
-
-
-//
-
-// function getMeal() {
-//     let meal = {
-//         "midi": {
-//             meat[randomInt(0, 5)]
-//     }
-//     }
-// }
-
+// const week = [ lundi: {midi:{viande : {food : yuzu , calories : 200, label : "yuzu" , icone: "URL" }, accompagnement, dessert} , soir:] mardi, mercredi, jeudi, vendredi, samedi, dimanche ]
 

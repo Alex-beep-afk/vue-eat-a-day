@@ -1,10 +1,28 @@
 <script setup>
-import Day from './components/Day.vue';
+import DayCard from './components/DayCard.vue';
 import { ref } from 'vue';
-import { weekDishe } from './assets/ingredients.js';
-const week = ref(weekDishe);
-console.log(week);
+import { week } from './assets/structureEat.js'
+const allWeek = ref(week);
 
+function calculCal(repas) {
+  let total = 0;
+  repas.forEach((repas) => {
+    total += repas.cal;
+  });
+  return total;
+}
+function calculTot() {
+  let total = 0;
+  allWeek.value.forEach((oneDay) => {
+    oneDay.meal.forEach((repas) => {
+      total += calculCal(repas.midi);
+      total += calculCal(repas.soir);
+    });
+  });
+  return total;
+}
+
+const totalCal = calculTot();
 </script>
 <!-- Créer un composant qui viendras recuperer les valeur des repas de la semaine -->
 <!-- Créer un jeu de données test (ingrédients / valeurs nutritionnelles /) et repas -->
@@ -13,18 +31,19 @@ console.log(week);
 
 
 <template>
-  <h1 class="bg-blue-500 text-white mx-auto text-5xl text-center p-10 max-w-300 rounded-b-lg shadow-2xl">Eat a day</h1>
-  <section class="flex flex-col ">
-    <div class="flex flex-col">
-      <h2 class="bg-blue-500 text-white mx-auto text-2xl text-center p-10 max-w-300 rounded-b-lg shadow-2xl">{{
-        week[0].day }}</h2>
-      <h3>Midi {{ week[0].dishe.midi.viande }} et {{ week[0].dishe.midi.accompagnement }} dessert = {{
-        week[0].dishe.soir.dessert }}</h3>
-      <h3>Soir {{ week[0].dishe.soir.viande }} et {{ week[0].dishe.soir.accompagnement }} dessert = {{
-        week[0].dishe.soir.dessert }}</h3>
-      <h3>Dessert {{ week[0].dishe.dessert }}</h3>
-    </div>
-  </section>
+  <main class="flex flex-col gap-10 p-10 bg-black">
+    <h1
+      class="bg-green-500 text-white mx-auto text-5xl text-center p-10 max-w-300 rounded-lg shadow-2xl shadow-green-500">
+      Eat a day
+    </h1>
+    <section class="flex flex-col bg-gray-200 p-10 mx-auto max-w-300 rounded-3xl shadow-2xl gap-10 shadow-green-500">
+      <DayCard v-for="oneDay in allWeek" :day="oneDay" />
+      <p class="text-white bg-green-500 shadow-xl rounded-full max-w-75 text-center p-5">Pour un total de {{ totalCal
+        }}
+        Calories</p>
+    </section>
+  </main>
+
 </template>
 
 <style scoped></style>

@@ -16,13 +16,15 @@ function concatLabel(repas) {
 
 </script>
 <template>
-    <div class="flex justify-center items-center text-white bg-green-500 shadow-2xl rounded-3xl gap-10">
-        <h2 class="text-2xl p-10 w-40">
+    <div
+        class="flex flex-col gap-10 items-center justify-center backdrop-blur-md backdrop-brightness-60 text-white rounded-lg shadow-2xl p-5">
+        <h2 class="text-3xl font-bold text-green-500">
             {{ day.day }}</h2>
-        <div class="border-l border-grey-500 p-10 w-175">
-            <p>Ce midi ce sera : {{ concatLabel(day.meal[0].midi) }}.
-                Ce soir ce sera : {{ concatLabel(day.meal[0].soir) }}</p>
-            <p>Pour un total de : {{ calculCal(day.meal[0].midi) + calculCal(day.meal[0].soir) }} Calories</p>
+        <div class="text-xs">
+            <p>Ce midi ce sera <span class="text-green-500">{{ concatLabel(day.meal[0].midi) }}</span> .
+                Ce soir ce sera <span class="text-green-500">{{ concatLabel(day.meal[0].soir) }}</span>.</p>
+            <p>Pour un total de <span class="text-green-500"> {{ calculCal(day.meal[0].midi) +
+                calculCal(day.meal[0].soir) }} </span> Calories</p>
         </div>
 
 

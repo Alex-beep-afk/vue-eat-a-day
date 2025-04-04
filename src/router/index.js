@@ -1,5 +1,7 @@
 // router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '@/Views/HomeView.vue'
+import RandomView from '@/Views/RandomView.vue'
 
 // On importe les vues avec lesquelles on va naviguer
 // Une vue, une route
@@ -8,7 +10,21 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
     history: createWebHistory(),
-    routes: [
+    routes: [{
+        path: '/',
+        name: 'home',
+        component: HomeView
+    },
+    {
+        path: '/random',
+        name: 'random',
+        component: RandomView
+    },
+    {
+        path: '/custom',
+        name: 'custom',
+        component: () => import('@/Views/PersoView.vue')
+    }
     ]
 })
 

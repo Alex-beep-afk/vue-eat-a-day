@@ -1,4 +1,7 @@
 <script setup>
+
+
+
 const props = defineProps({
     day: Object,
 });
@@ -16,8 +19,8 @@ function concatLabel(repas) {
 
 </script>
 <template>
-    <div
-        class="flex flex-col gap-10 items-center justify-center backdrop-blur-md backdrop-brightness-60 text-white rounded-lg shadow-2xl p-5">
+    <div class="flex flex-col justify-center items-center gap-10 w-70 h-50 backdrop-blur-md backdrop-brightness-50 backdrop-contrast-100 text-white rounded-lg shadow-2xl p-5 m-5 
+        hover:bg-yellow-500/70 transition duration-300 ease-in-out transform hover:scale-105 relative">
         <h2 class="text-3xl font-bold text-green-500">
             {{ day.day }}</h2>
         <div class="text-xs">
@@ -29,5 +32,7 @@ function concatLabel(repas) {
 
 
     </div>
+
+
 </template>
 <style scoped></style>

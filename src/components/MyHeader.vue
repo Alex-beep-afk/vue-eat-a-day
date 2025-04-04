@@ -7,8 +7,8 @@
             Eat The Day
         </h1>
         <ul class="flex gap-10">
-            <li>Random repas</li>
-            <li>Personnaliser sa semaine</li>
+            <li><router-link to="/">Accueil</router-link></li>
+            <li><router-link to="/custom">Personnaliser sa semaine</router-link></li>
         </ul>
     </header>
 

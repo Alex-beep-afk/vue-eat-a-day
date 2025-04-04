@@ -4,7 +4,7 @@ function randomInt(min, max) {
 
 
 
-const ingredients = [{
+export const ingredients = [{
     "viandes": [
         {
             'label': 'steak',
@@ -189,7 +189,7 @@ const allWeek = [
     "Samedi",
     "Dimanche"
 ]
-function randomWeek() {
+export function randomWeek() {
     const weekDishe = []
     allWeek.forEach(day => {
         weekDishe.push({
@@ -199,6 +199,6 @@ function randomWeek() {
     });
     return weekDishe;
 }
-export const week = randomWeek();
+
 
 

@@ -1,4 +1,5 @@
 <script setup>
+const icons = ["discord", "facebook", "github", "instagram", "linkedin", "snapchat", "tiktok", "twitter", "whatsapp"]
 
 </script>
 <template>
@@ -7,16 +8,10 @@
         <h3 class="font-bold">
             © 2025 Eat The Day- DWWM - All rights reserved
         </h3>
-        <ul class="flex gap-10">
-            <li>instagram</li>
-            <li>facebook</li>
-            <li>twitter</li>
-            <li>linkedin</li>
-            <li>github</li>
-            <li>tiktok</li>
-            <li>snapchat</li>
-            <li>whatsapp</li>
-            <li>discord</li>
+        <ul class="flex gap-1">
+            <img class="w-10 hover:invert brightness-0" v-for="icon in icons"
+                :src="`./src/assets/img/icons/${icon}.png`" alt="">
+
         </ul>
 
     </footer>

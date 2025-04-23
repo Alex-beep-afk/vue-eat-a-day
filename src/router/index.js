@@ -24,7 +24,16 @@ const router = createRouter({
         path: '/custom',
         name: 'custom',
         component: () => import('@/Views/PersoView.vue')
+    },
+    {
+        path: '/customResult',
+        name: 'customResult',
+        component: () => import('@/Views/PersoRandomView.vue'),
+        props: route => ({
+            allWeek: route.query.data
+        })
     }
+
     ]
 })
 

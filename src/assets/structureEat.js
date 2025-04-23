@@ -1,4 +1,4 @@
-function randomInt(min, max) {
+export function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -9,37 +9,37 @@ export const ingredients = [{
         {
             'label': 'steak',
             'cal': 104,
-            'img': 'steak.jpg',
+            'img': 'steak.webp',
             'type': 'viande'
         },
         {
             'label': 'poulet',
             'cal': 508,
-            'img': 'poulet.jpg',
+            'img': 'poulet.webp',
             'type': 'viande'
         },
         {
             'label': 'agneau',
             'cal': 202,
-            'img': 'agneau.jpg',
+            'img': 'agneau.webp',
             'type': 'viande'
         },
         {
             'label': 'porc',
             'cal': 112,
-            'img': 'porc.jpg',
+            'img': 'porc.webp',
             'type': 'viande'
         },
         {
             'label': 'dinde',
             'cal': 800,
-            'img': 'dinde.jpg',
+            'img': 'dinde.webp',
             'type': 'viande'
         },
         {
             'label': 'boeuf',
             'cal': 500,
-            'img': 'boeuf.jpg',
+            'img': 'boeuf.webp',
             'type': 'viande'
         }
     ]
@@ -50,31 +50,31 @@ export const ingredients = [{
         {
             'label': 'riz',
             'cal': 300,
-            'img': 'salade.jpg',
+            'img': 'riz.webp',
             'type': 'feculent'
         },
         {
             'label': 'pommes de terre',
             'cal': 300,
-            'img': 'pommes-de-terre.jpg',
+            'img': 'pommeDeTerre.webp',
             'type': 'feculent'
         },
         {
             'label': 'pates',
             'cal': 300,
-            'img': 'mais.jpg',
+            'img': 'pates.webp',
             'type': 'feculent'
         },
         {
             'label': 'quinoa',
             'cal': 178,
-            'img': 'quinoa.jpg',
+            'img': 'quinoa.webp',
             'type': 'feculent'
         },
         {
-            'label': 'couscous',
+            'label': 'semoule',
             'cal': 180,
-            'img': 'couscous.jpg',
+            'img': 'semoule.webp',
             'type': 'feculent'
         }
     ]
@@ -85,31 +85,31 @@ export const ingredients = [{
         {
             'label': 'carotte',
             'cal': 1005,
-            'img': 'carotte.jpg',
+            'img': 'carottes.webp',
             'type': 'legume'
         },
         {
             'label': 'oignon',
             'cal': 1110,
-            'img': 'oignon.jpg',
+            'img': 'oignon.webp',
             'type': 'legume'
         },
         {
             'label': 'tomate',
             'cal': 150,
-            'img': 'tomate.jpg',
+            'img': 'tomate.webp',
             'type': 'legume'
         },
         {
             'label': 'poivron',
             'cal': 10,
-            'img': 'poivron.jpg',
+            'img': 'poivron.webp',
             'type': 'legume'
         },
         {
             'label': 'choux',
             'cal': 800,
-            'img': 'ail.jpg',
+            'img': 'choux.webp',
             'type': 'legume'
         }
     ]
@@ -118,33 +118,33 @@ export const ingredients = [{
 {
     "Dessert": [
         {
-            'label': 'chocolat',
+            'label': 'chocolatine',
             'cal': 540,
-            'img': 'chocolat.jpg',
+            'img': 'chocolatine.webp',
             'type': 'dessert'
         },
         {
             'label': 'pavlova',
             'cal': 980,
-            'img': 'pavlova.jpg',
+            'img': 'pavlova.webp',
             'type': 'dessert'
         },
         {
             'label': 'tiramisu',
             'cal': 562,
-            'img': 'tiramisu.jpg',
+            'img': 'tiramisu.webp',
             'type': 'dessert'
         },
         {
             'label': 'mousse au chocolat',
             'cal': 851,
-            'img': 'mousse-au-chocolat.jpg',
+            'img': 'mousseAuChocolat.webp',
             'type': 'dessert'
         },
         {
             'label': 'tarte au citron',
             'cal': 581,
-            'img': 'tarte-au-citron.jpg',
+            'img': 'tarteAuCitron.webp',
             'type': 'dessert'
         }
     ]
@@ -189,6 +189,8 @@ const allWeek = [
     "Samedi",
     "Dimanche"
 ]
+
+
 export function randomWeek() {
     const weekDishe = []
     allWeek.forEach(day => {
